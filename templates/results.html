@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+    <title>Dojo Survey</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="card col-md-4 bg-dark text-center text-white">
+                <h1 class="text-primary">Submitted Info</h1>
+                <div class="d-flex justify-content-between">
+                    <p>Name:</p><p>{{ session['name'] }}</p>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <p>Location:</p><p>{{ session['location'] }}</p>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <p>Favorite Language:</p><p>{{ session['language'] }}</p>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <p>Rating:</p><p>{{ session['rating'] }} / 5</p>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <p>Stacks:</p><p>
+                        {% if 'Python' in session %}
+                        Python <br>
+                        {% endif %}
+                        {% if 'MEAN' in session %}
+                        MEAN <br>
+                        {% endif %}
+                        {% if 'MERN' in session %}
+                        MERN <br>
+                        {% endif %}
+                        {% if 'C#/.NET' in session %}
+                        C#/.NET <br>
+                        {% endif %}
+                        {% if 'Java' in session %}
+                        Java <br>
+                        {% endif %}
+                    </p>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <p>Comments:</p><p>{{ session['comments'] }}</p>
+                </div>
+            </div>
+            <div class="col-md-4"></div>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous'>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+        <title>Dojo Survey</title>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4"></div>
+                <form action="/submission" method="POST" class="card col-md-4 bg-dark text-center text-white">
+                    <h1 class="text-primary">Coding Dojo Survey</h1>
+                    <label for="name">Your name:</label>
+                    <input type="text" name="name" id="name" placeholder="Your Name Here" required>
+                    <label for="location">Dojo Location:</label>
+                    <select name="location" id="location" required>
+                        <option value="" disabled selected hidden>Select Your Location</option>
+                        <option value="Bellevue, WA">Bellevue, WA</option>
+                        <option value="Boise, ID">Boise, ID</option>
+                        <option value="Chicago, IL">Chicago, IL</option>
+                        <option value="Los Angeles, CA">Los Angeles, CA</option>
+                        <option value="Silicon Valley, CA">Silicon Valley, CA</option>
+                        <option value="Online Virtual">Online Virtual</option>
+                    </select>
+                    <label for="language">Favorite Language:</label>
+                    <select name="language" id="language" required>
+                        <option value="" disabled selected hidden>Favorite Language</option>
+                        <option value="HTML">HTML</option>
+                        <option value="CSS">CSS</option>
+                        <option value="Javascript">Javascript</option>
+                        <option value="Python">Python</option>
+                        <option value="C#">C#</option>
+                        <option value="Java">Java</option>
+                    </select>
+                    <p>How would you rate Coding Dojo?</p>
+                    <div class="d-flex justify-content-around">
+                        <label for="1">
+                            <input type="radio" name="rating" id="1" value="1">
+                            &nbsp;1
+                        </label>
+                        <label for="2">
+                            <input type="radio" name="rating" id="2" value="2">
+                            &nbsp;2
+                        </label>
+                        <label for="3">
+                            <input type="radio" name="rating" id="3" value="3">
+                            &nbsp;3
+                        </label>
+                        <label for="4">
+                            <input type="radio" name="rating" id="4" value="4">
+                            &nbsp;4
+                        </label>
+                        <label for="5">
+                            <input type="radio" name="rating" id="5" value="5">
+                            &nbsp;5
+                        </label>
+                    </div>
+                    <p>Which Stacks are you taking?</p>
+                    <div class="d-flex justify-content-around">
+                        <label for="Python">
+                        <input type="checkbox" name="Python" id="Python" value="Python">
+                        Python
+                        </label>
+                        <label for="MEAN">
+                        <input type="checkbox" name="MEAN" id="MEAN" value="MEAN">
+                        MEAN
+                        </label>
+                        <label for="MERN">
+                        <input type="checkbox" name="MERN" id="MERN" value="MERN">
+                        MERN
+                        </label>
+                        <label for="C#/.NET">
+                        <input type="checkbox" name="C#/.NET" id="C#/.NET" value="C#/.NET">
+                        C#/.NET
+                        </label>
+                        <label for="Java">
+                        <input type="checkbox" name="Java" id="Java" value="Java">
+                        Java
+                        </label>
+                    </div>
+                    <label for="comments">Any Additional Comments?</label>
+                    <textarea name="comments" id="comments" cols="30" rows="10"></textarea>
+                    <input type="submit" value="Sumbit" class="button button-primary">
+                </form>
+                <div class="col-md-4"></div>
+            </div>
+        </div>
+    </body>
+</html>
